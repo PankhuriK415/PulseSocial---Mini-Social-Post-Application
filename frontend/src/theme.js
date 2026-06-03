@@ -4,19 +4,19 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#6366F1', // Indigo
-      light: '#818CF8',
-      dark: '#4F46E5',
-      contrastText: '#F8FAFC',
+      main: '#7C3AED', // Violet Primary
+      light: '#A78BFA',
+      dark: '#6D28D9',
+      contrastText: '#FFFFFF',
     },
     secondary: {
-      main: '#8B5CF6', // Purple
-      light: '#A78BFA',
-      dark: '#7C3AED',
-      contrastText: '#F8FAFC',
+      main: '#A855F7', // Purple Secondary
+      light: '#C084FC',
+      dark: '#7E22CE',
+      contrastText: '#FFFFFF',
     },
     info: {
-      main: '#06B6D4', // Cyan (Accent)
+      main: '#06B6D4', // Cyan
       light: '#22D3EE',
       dark: '#0891B2',
     },
@@ -26,14 +26,14 @@ const theme = createTheme({
       dark: '#059669',
     },
     background: {
-      default: '#0F172A', // Deep Slate
-      paper: '#111827',   // Dark Gray Card
+      default: '#0A0A0A', // Deep Vercel Black
+      paper: '#171717',   // Vercel Card Gray
     },
     text: {
-      primary: '#F8FAFC',   // Light Off-White
-      secondary: '#94A3B8', // Muted Blue-Gray
+      primary: '#FFFFFF',   // Pure White
+      secondary: '#A1A1AA', // Muted Gray
     },
-    divider: 'rgba(255, 255, 255, 0.08)',
+    divider: '#262626', // Border Gray
   },
   typography: {
     fontFamily: '"Outfit", "Inter", "Roboto", "Helvetica", "Arial", sans-serif',
@@ -89,14 +89,14 @@ const theme = createTheme({
           transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
           boxShadow: 'none',
           '&:hover': {
-            boxShadow: '0 4px 12px rgba(99, 102, 241, 0.25)',
+            boxShadow: '0 4px 12px rgba(124, 58, 237, 0.25)',
             transform: 'translateY(-1px)',
           },
         },
         containedPrimary: {
-          background: 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
+          background: 'linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)',
           '&:hover': {
-            background: 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%)',
+            background: 'linear-gradient(135deg, #6D28D9 0%, #7E22CE 100%)',
           },
         },
       },
@@ -104,10 +104,10 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundColor: '#111827',
+          backgroundColor: '#171717',
           backgroundImage: 'none',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.2)',
+          border: '1px solid #262626',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.4)',
           backdropFilter: 'blur(8px)',
         },
       },
@@ -119,13 +119,13 @@ const theme = createTheme({
             borderRadius: 12,
             transition: 'all 0.2s ease',
             '& fieldset': {
-              borderColor: 'rgba(255, 255, 255, 0.08)',
+              borderColor: '#262626',
             },
             '&:hover fieldset': {
-              borderColor: 'rgba(255, 255, 255, 0.2)',
+              borderColor: 'rgba(255, 255, 255, 0.15)',
             },
             '&.Mui-focused fieldset': {
-              borderColor: '#6366F1',
+              borderColor: '#7C3AED',
             },
           },
         },
@@ -135,14 +135,14 @@ const theme = createTheme({
       styleOverrides: {
         paper: {
           borderRadius: 20,
-          border: '1px solid rgba(255, 255, 255, 0.12)',
+          border: '1px solid #262626',
         },
       },
     },
     MuiAvatar: {
       styleOverrides: {
         root: {
-          border: '1px solid rgba(255, 255, 255, 0.1)',
+          border: '1px solid #262626',
         },
       },
     },

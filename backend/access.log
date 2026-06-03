@@ -1,0 +1,16 @@
+[2026-06-03T17:22:32.086Z] OPTIONS /api/auth/signup - Status: 204 - 4ms
+[2026-06-03T17:22:32.237Z] POST /api/auth/signup - Status: 201 - 148ms
+[2026-06-03T17:22:33.316Z] OPTIONS /api/posts?page=1&limit=10 - Status: 204 - 0ms
+[2026-06-03T17:22:33.318Z] OPTIONS /api/posts?page=1&limit=10 - Status: 204 - 0ms
+[2026-06-03T17:22:33.352Z] GET /api/posts?page=1&limit=10 - Status: 200 - 29ms
+[2026-06-03T17:22:33.359Z] GET /api/posts?page=1&limit=10 - Status: 304 - 6ms
+[2026-06-03T17:22:54.409Z] OPTIONS /api/posts/user/6a2062d84bb17b5dad527925 - Status: 204 - 1ms
+[2026-06-03T17:22:54.410Z] OPTIONS /api/posts/user/6a2062d84bb17b5dad527925 - Status: 204 - 0ms
+[2026-06-03T17:22:54.424Z] GET /api/posts/user/6a2062d84bb17b5dad527925 - Status: 200 - 13ms
+[2026-06-03T17:22:54.429Z] GET /api/posts/user/6a2062d84bb17b5dad527925 - Status: 304 - 5ms
+[2026-06-03T17:23:12.616Z] OPTIONS /api/auth/login - Status: 204 - 0ms
+[2026-06-03T17:23:12.710Z] POST /api/auth/login - Status: 200 - 91ms
+[2026-06-03T17:23:13.754Z] OPTIONS /api/posts?page=1&limit=10 - Status: 204 - 0ms
+[2026-06-03T17:23:13.758Z] OPTIONS /api/posts?page=1&limit=10 - Status: 204 - 0ms
+[2026-06-03T17:23:13.764Z] GET /api/posts?page=1&limit=10 - Status: 304 - 4ms
+[2026-06-03T17:23:13.770Z] GET /api/posts?page=1&limit=10 - Status: 304 - 5ms

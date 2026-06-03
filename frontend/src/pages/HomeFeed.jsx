@@ -117,7 +117,7 @@ const HomeFeed = () => {
   const renderSkeletons = () => (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
       {[1, 2, 3].map((n) => (
-        <Box key={n} sx={{ p: 2.5, borderRadius: 4, backgroundColor: '#111827', border: '1px solid rgba(255,255,255,0.08)' }}>
+        <Box key={n} sx={{ p: 2.5, borderRadius: 4, backgroundColor: 'background.paper', border: '1px solid rgba(255,255,255,0.08)' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
             <Skeleton variant="circular" width={40} height={40} sx={{ mr: 1.5, bgcolor: 'rgba(255,255,255,0.06)' }} />
             <Box sx={{ flexGrow: 1 }}>
@@ -147,7 +147,7 @@ const HomeFeed = () => {
             borderRadius: 4,
             mb: 4,
             textAlign: 'center',
-            backgroundColor: '#111827',
+            backgroundColor: 'background.paper',
             border: '1px dashed rgba(255, 255, 255, 0.08)',
           }}
         >
@@ -193,7 +193,7 @@ const HomeFeed = () => {
             sx={{
               p: 6,
               borderRadius: 4,
-              backgroundColor: '#111827',
+              backgroundColor: 'background.paper',
               border: '1px solid rgba(255, 255, 255, 0.08)',
               textAlign: 'center',
               display: 'flex',

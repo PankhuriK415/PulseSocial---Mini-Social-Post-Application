@@ -5,7 +5,6 @@ import { getAvatarUrl } from '../utils/avatar';
 import {
   Box,
   Container,
-  Grid,
   List,
   ListItem,
   ListItemButton,
@@ -88,7 +87,7 @@ const DashboardLayout = () => {
         sx={{
           borderRadius: 4,
           overflow: 'hidden',
-          backgroundColor: '#111827',
+          backgroundColor: 'background.paper',
           mb: 3,
         }}
       >
@@ -137,7 +136,7 @@ const DashboardLayout = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            backgroundColor: '#111827',
+            backgroundColor: 'background.paper',
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', minWidth: 0 }}>
@@ -166,7 +165,7 @@ const DashboardLayout = () => {
   const renderRightPanel = () => (
     <Box sx={{ position: 'sticky', top: 24 }}>
       {/* Community Stats */}
-      <Paper sx={{ p: 3, borderRadius: 4, mb: 3, backgroundColor: '#111827' }}>
+      <Paper sx={{ p: 3, borderRadius: 4, mb: 3, backgroundColor: 'background.paper' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
           <StatsIcon sx={{ color: '#06B6D4', mr: 1 }} />
           <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '1rem', color: '#F8FAFC' }}>
@@ -190,7 +189,7 @@ const DashboardLayout = () => {
       </Paper>
 
       {/* Trending Topics */}
-      <Paper sx={{ p: 3, borderRadius: 4, backgroundColor: '#111827' }}>
+      <Paper sx={{ p: 3, borderRadius: 4, backgroundColor: 'background.paper' }}>
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
           <TrendingIcon sx={{ color: '#8B5CF6', mr: 1 }} />
           <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '1rem', color: '#F8FAFC' }}>
@@ -227,7 +226,7 @@ const DashboardLayout = () => {
   );
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: '#0F172A' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'background.default' }}>
       
       {/* Mobile Top Navbar */}
       {isMobile && (
@@ -278,28 +277,29 @@ const DashboardLayout = () => {
         </Paper>
       )}
 
-      {/* Main Grid Content */}
+      {/* Main Grid Content (Using CSS Grid via Box for reliability across MUI versions) */}
       <Container maxWidth="lg" sx={{ flexGrow: 1, py: { xs: 3, md: 4 }, pb: { xs: 10, md: 4 } }}>
-        <Grid container spacing={3}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: {
+              xs: '1fr',
+              md: '3fr 6fr 3fr',
+            },
+            gap: 3,
+          }}
+        >
           {/* Left Column (Sidebar) */}
-          {!isMobile && (
-            <Grid item md={3}>
-              {renderSidebar()}
-            </Grid>
-          )}
+          {!isMobile && renderSidebar()}
 
           {/* Center Column (Feed / Profile) */}
-          <Grid item xs={12} md={6}>
+          <Box sx={{ minWidth: 0 }}>
             <Outlet />
-          </Grid>
+          </Box>
 
           {/* Right Column (Community Stats) */}
-          {!isMobile && (
-            <Grid item md={3}>
-              {renderRightPanel()}
-            </Grid>
-          )}
-        </Grid>
+          {!isMobile && renderRightPanel()}
+        </Box>
       </Container>
 
       {/* Mobile Bottom Navigation */}
@@ -314,7 +314,7 @@ const DashboardLayout = () => {
             zIndex: 1100,
             borderRadius: 0,
             borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-            backgroundColor: '#111827',
+            backgroundColor: 'background.paper',
           }}
         >
           <BottomNavigation
@@ -350,7 +350,7 @@ const DashboardLayout = () => {
         onClose={() => setLogoutOpen(false)}
         PaperProps={{
           sx: {
-            backgroundColor: '#111827',
+            backgroundColor: 'background.paper',
             border: '1px solid rgba(255, 255, 255, 0.08)',
           }
         }}

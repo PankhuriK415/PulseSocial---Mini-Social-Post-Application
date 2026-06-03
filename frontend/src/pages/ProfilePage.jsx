@@ -9,7 +9,6 @@ import {
   Paper,
   Avatar,
   Typography,
-  Grid,
   Divider,
   Stack,
   CircularProgress,
@@ -98,14 +97,14 @@ const ProfilePage = () => {
   if (loading) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
-        <CircularProgress size={40} sx={{ color: '#6366F1' }} />
+        <CircularProgress size={40} sx={{ color: 'primary.main' }} />
       </Box>
     );
   }
 
   if (!profileUser) {
     return (
-      <Paper sx={{ p: 4, textAlign: 'center', backgroundColor: '#111827' }}>
+      <Paper sx={{ p: 4, textAlign: 'center', backgroundColor: 'background.paper' }}>
         <Typography variant="h6" sx={{ color: '#F8FAFC', mb: 2 }}>
           User not found
         </Typography>
@@ -128,7 +127,7 @@ const ProfilePage = () => {
           p: 4,
           borderRadius: 4,
           mb: 3,
-          backgroundColor: '#111827',
+          backgroundColor: 'background.paper',
           border: '1px solid rgba(255, 255, 255, 0.08)',
           position: 'relative',
           overflow: 'hidden',
@@ -177,37 +176,43 @@ const ProfilePage = () => {
         </Box>
       </Paper>
 
-      {/* Statistics Metric Cards */}
-      <Grid container spacing={2} sx={{ mb: 3 }}>
+      {/* Statistics Metric Cards (Using standard CSS Grid for version-agnostic side-by-side rendering) */}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 2,
+          mb: 3,
+        }}
+      >
         {[
           { label: 'Pulses Created', val: stats.totalPosts, icon: <PostIcon sx={{ color: '#6366F1' }} />, bg: 'rgba(99, 102, 241, 0.04)' },
           { label: 'Likes Received', val: stats.totalLikesReceived, icon: <HeartIcon sx={{ color: '#EF4444' }} />, bg: 'rgba(239, 68, 68, 0.04)' },
           { label: 'Comments Left', val: stats.totalCommentsReceived, icon: <CommentIcon sx={{ color: '#06B6D4' }} />, bg: 'rgba(6, 182, 212, 0.04)' }
         ].map((item, index) => (
-          <Grid item xs={4} key={index}>
-            <Paper
-              sx={{
-                p: 2.5,
-                borderRadius: 4,
-                backgroundColor: '#111827',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                textAlign: 'center',
-                background: `linear-gradient(135deg, #111827 0%, ${item.bg} 100%)`,
-              }}
-            >
-              <Box sx={{ display: 'inline-flex', p: 1, borderRadius: 3, backgroundColor: 'rgba(255,255,255,0.03)', mb: 1 }}>
-                {item.icon}
-              </Box>
-              <Typography variant="h5" sx={{ fontWeight: 800, color: '#F8FAFC', mb: 0.5 }}>
-                {item.val}
-              </Typography>
-              <Typography variant="caption" sx={{ color: '#94A3B8', fontWeight: 500 }}>
-                {item.label}
-              </Typography>
-            </Paper>
-          </Grid>
+          <Paper
+            key={index}
+            sx={{
+              p: 2.5,
+              borderRadius: 4,
+              backgroundColor: 'background.paper',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              textAlign: 'center',
+              background: (theme) => `linear-gradient(135deg, ${theme.palette.background.paper} 0%, ${item.bg} 100%)`,
+            }}
+          >
+            <Box sx={{ display: 'inline-flex', p: 1, borderRadius: 3, backgroundColor: 'rgba(255,255,255,0.03)', mb: 1 }}>
+              {item.icon}
+            </Box>
+            <Typography variant="h5" sx={{ fontWeight: 800, color: '#F8FAFC', mb: 0.5 }}>
+              {item.val}
+            </Typography>
+            <Typography variant="caption" sx={{ color: '#94A3B8', fontWeight: 500 }}>
+              {item.label}
+            </Typography>
+          </Paper>
         ))}
-      </Grid>
+      </Box>
 
       {/* Activity Statistics Panel */}
       <Paper
@@ -215,7 +220,7 @@ const ProfilePage = () => {
           p: 3,
           borderRadius: 4,
           mb: 4,
-          backgroundColor: '#111827',
+          backgroundColor: 'background.paper',
           border: '1px solid rgba(255, 255, 255, 0.08)',
         }}
       >
@@ -294,7 +299,7 @@ const ProfilePage = () => {
             p: 4,
             borderRadius: 4,
             textAlign: 'center',
-            backgroundColor: '#111827',
+            backgroundColor: 'background.paper',
             border: '1px dashed rgba(255,255,255,0.08)',
           }}
         >

@@ -129,7 +129,7 @@ const CreatePostCard = ({ onPostCreated, showToast }) => {
         p: 2.5,
         borderRadius: 4,
         mb: 3,
-        backgroundColor: '#111827',
+        backgroundColor: 'background.paper',
         border: isDragging ? '1px dashed #6366F1' : '1px solid rgba(255, 255, 255, 0.08)',
         boxShadow: isDragging ? '0 0 15px rgba(99, 102, 241, 0.15)' : '0 4px 20px rgba(0,0,0,0.15)',
         position: 'relative',

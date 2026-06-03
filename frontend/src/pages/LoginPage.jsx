@@ -81,7 +81,7 @@ const LoginPage = () => {
   return (
     <Box
       sx={{
-        backgroundColor: '#0F172A',
+        backgroundColor: 'background.default',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -121,12 +121,12 @@ const LoginPage = () => {
             {/* Header / Logo */}
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 4 }}>
               <Link to="/" style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
-                <LogoIcon sx={{ fontSize: 36, color: '#6366F1', mr: 0.5 }} />
+                <LogoIcon sx={{ fontSize: 36, color: 'primary.main', mr: 0.5 }} />
                 <Typography
                   variant="h5"
                   sx={{
                     fontWeight: 800,
-                    background: 'linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)',
+                    background: (theme) => `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.info.main} 100%)`,
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                   }}
@@ -151,7 +151,7 @@ const LoginPage = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={loading}
                   InputLabelProps={{ style: { color: '#94A3B8' } }}
-                  inputProps={{ style: { color: '#F8FAFC' } }}
+                  inputProps={{ style: { color: '#FFFFFF' } }}
                 />
 
                 <TextField
@@ -163,7 +163,7 @@ const LoginPage = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={loading}
                   InputLabelProps={{ style: { color: '#94A3B8' } }}
-                  inputProps={{ style: { color: '#F8FAFC' } }}
+                  inputProps={{ style: { color: '#FFFFFF' } }}
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
@@ -200,7 +200,7 @@ const LoginPage = () => {
             <Box sx={{ mt: 4, textAlign: 'center' }}>
               <Typography variant="body2" sx={{ color: '#94A3B8' }}>
                 Don't have an account?{' '}
-                <Link to="/signup" style={{ color: '#6366F1', fontWeight: 600, textDecoration: 'none' }}>
+                <Link to="/signup" style={{ color: '#7C3AED', fontWeight: 600, textDecoration: 'none' }}>
                   Sign up
                 </Link>
               </Typography>

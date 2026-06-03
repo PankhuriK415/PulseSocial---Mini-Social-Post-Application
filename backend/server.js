@@ -9,7 +9,25 @@ dotenv.config();
 // Connect to Database
 connectDB();
 
+const fs = require('fs');
+const path = require('path');
+
 const app = express();
+
+// Custom Access File Logger Middleware (Requests trace logger)
+app.use((req, res, next) => {
+  const logFile = path.join(__dirname, 'access.log');
+  const start = Date.now();
+  
+  res.on('finish', () => {
+    const duration = Date.now() - start;
+    const logLine = `[${new Date().toISOString()}] ${req.method} ${req.originalUrl} - Status: ${res.statusCode} - ${duration}ms\n`;
+    fs.appendFile(logFile, logLine, (err) => {
+      if (err) console.error('Failed to write access log:', err);
+    });
+  });
+  next();
+});
 
 // Standard Middlewares
 app.use(cors({

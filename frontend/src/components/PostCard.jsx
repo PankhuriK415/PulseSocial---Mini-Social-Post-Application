@@ -142,7 +142,7 @@ const PostCard = ({ post, showToast }) => {
           p: 2.5,
           borderRadius: 4,
           mb: 3,
-          backgroundColor: '#111827',
+          backgroundColor: 'background.paper',
           border: '1px solid rgba(255, 255, 255, 0.08)',
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
           overflow: 'hidden',
