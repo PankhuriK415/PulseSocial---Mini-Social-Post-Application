@@ -31,7 +31,12 @@ app.use((req, res, next) => {
 
 // Standard Middlewares
 app.use(cors({
-  origin: '*', // We can restrict this in production if desired
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://localhost:3000',
+    'https://pulse-social-mini-social-post-appli.vercel.app'
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
